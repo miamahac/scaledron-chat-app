@@ -86,7 +86,7 @@ const [drone, setDrone] = useState('');
 
 
 useEffect(() => {
-  const drone = new window.Scaledrone('3LFouKRYUiPgLdbk', {
+  const drone = new window.Scaledrone('SeD8rFMLxbFQhuaq', {
     data: member,
   });
 
@@ -95,6 +95,7 @@ useEffect(() => {
       if (error) {
         return console.error(error);
       }
+      console.log('Successfully connected to Scaledrone');
 
       member.id = drone.clientId;
       setMembers(member);
@@ -106,7 +107,7 @@ const room = drone.subscribe("observable-room");
 room.on("message", (message) => {
   setMessages((prevState) => [...prevState, message]);
 });
-
+console.log('Successfully joined room');
 
 setDrone(drone);
 }, [member]
