@@ -18,7 +18,7 @@ function randomUser() {
  
   const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
   const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-  return firstName + lastName;
+  return firstName + " " + lastName;
 }
 
 function randomColor() {
@@ -94,3 +94,12 @@ const onSendMessage = (message) => {
 }
 
 
+// dupliciraju se poruke
+//ako se posalje prazna poruka baca error
+// Warning: Each child in a list should have a unique "key" prop.
+// Check the render method of `Messages`. See https://reactjs.org/link/warning-keys for more information.
+//     at li
+//     at Messages (http://localhost:3000/static/js/bundle.js:292:5)
+//     at div
+//     at App (http://localhost:3000/static/js/bundle.js:46:81)
+// o
