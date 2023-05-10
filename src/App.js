@@ -35,53 +35,6 @@ const [member, setMembers] = useState({
   color: randomColor(),
 })
 
-
-///////////////////
-// const [drone, setDrone] = useState();
-// const [room, setRoom] = useState(null);
-
-// useEffect(() => {
-//   const drone = new window.Scaledrone('3LFouKRYUiPgLdbk', {
-//     data: member,
-//   });
-//   setDrone(drone);
-// }, [member]
-// );
-
-// useEffect(() => {
-//   if (drone) {
-//     drone.on("open", (error) => {
-//       if (error) {
-//         return console.error(error);
-//       }
-
-//       member.id = drone.clientId;
-//       setMembers(member);
-//     });
-
-// //     const room = drone.subscribe("observable-room");
-// //     room.on("message", (message) => {
-// //       setMessages((prevState) => [...prevState, message]);
-// //     });
-// //   }
-// // }, [drone, member]);
-
-// const room = drone.subscribe("observable-room");
-// room.on("message", (message) => {
-//   setMessages((prevState) => [...prevState, message]);
-// });
-// }
-// }, [drone, member]);
-
-
-// const onSendMessage = (message) => {
-//   drone.publish({ room: "observable-room", message });
-//   console.log("poslano " + message);
-
-// };
-/////////////////
-
-
 const [drone, setDrone] = useState('');
 
 
@@ -89,7 +42,7 @@ useEffect(() => {
   const drone = new window.Scaledrone('SeD8rFMLxbFQhuaq', {
     data: member,
   });
-
+  
 
     drone.on("open", (error) => {
       if (error) {
@@ -100,7 +53,6 @@ useEffect(() => {
       member.id = drone.clientId;
       setMembers(member);
     });
-
 
 
 const room = drone.subscribe("observable-room");
@@ -114,31 +66,21 @@ setDrone(drone);
 );
 
 
-
-
-
 const onSendMessage = (message) => {
   drone.publish({ 
     room: "observable-room", 
     message });
   console.log("poslano " + message);
 
-};
 
+};
 
   //  //Za Input:
   function onMessageType(event) {
-
     setMessages(event.target.value);
  
   }
   
-  //Za button: MOJE
-//   function onSendMessage(event) {
-//     // sendMessage(message); - With an event handler, you can be sure that sendMessage(message) will only run if the user presses the button.
-// console.log('Poslana poruka: ' + message);
-// }
-
 
 //ispisuje svako slovo u konzoli
 useEffect(() => {
@@ -151,8 +93,6 @@ useEffect(() => {
  <header className="App-header">
 <h1>Chat app</h1>
       </header>
-
-
     <Messages
           messages={message}
           currentMember={member}
@@ -162,8 +102,6 @@ useEffect(() => {
           onMessageType={onMessageType}
           onSendMessage={onSendMessage}
     />
-
-
     </div>
   );
 }
