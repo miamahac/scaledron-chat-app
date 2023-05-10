@@ -13,9 +13,9 @@ export default function Messages({message, currentMember}) {
 
         return (
           <li className={className}>
-            <span
-              className="avatar"
-              style={{ backgroundColor: member.clientData.color }}
+            <span 
+            className="avatar" 
+            style={{ backgroundColor: member.clientData.color }} 
             />
             <div className="Message-content">
               <div className="username">
@@ -30,9 +30,9 @@ export default function Messages({message, currentMember}) {
       }
 
       
-        return (
+      return (
         <div>
-            <ul>
+            <ul className="Messages-list">
             {message && message.map((message) => showMessage(message))}
             {/* https://reactjsguru.com/can-not-read-properties-of-undefined-reading-map/ */}
             </ul>
