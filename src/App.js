@@ -28,14 +28,14 @@ function randomColor() {
 
 
 //state-ovi aplikacije - prvo message i member def
-const [message, setMessages] = useState('');
+const [message, setMessages] = useState([]);
 
 const [member, setMembers] = useState({
   username: randomUser(),
   color: randomColor(),
 })
 
-const [drone, setDrone] = useState('');
+const [drone, setDrone] = useState();
 
 
 useEffect(() => {
@@ -62,8 +62,7 @@ room.on("message", (message) => {
 console.log('Successfully joined room');
 
 setDrone(drone);
-}, [member]
-);
+}, []);
 
 
 const onSendMessage = (message) => {
@@ -71,21 +70,11 @@ const onSendMessage = (message) => {
     room: "observable-room", 
     message });
   console.log("poslano " + message);
-
-
 };
 
-  //  //Za Input:
-  function onMessageType(event) {
-    setMessages(event.target.value);
- 
-  }
-  
 
-//ispisuje svako slovo u konzoli
-useEffect(() => {
-  console.log(message); 
-}, [message])
+
+
 
 
   return (
@@ -94,12 +83,10 @@ useEffect(() => {
 <h1>Chat app</h1>
       </header>
     <Messages
-          messages={message}
+          message={message}
           currentMember={member}
         />
     <InputButton
-          name={message}
-          onMessageType={onMessageType}
           onSendMessage={onSendMessage}
     />
     </div>

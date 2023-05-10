@@ -4,7 +4,7 @@ export default function Messages({message, currentMember}) {
 
 
     function showMessage(message) {
-        const { member, text } = message;
+        const { member, data } = message;
         const messageFromMe = member.id === currentMember.id;
         const className = messageFromMe
           ? "Messages-message currentMember"
@@ -22,7 +22,7 @@ export default function Messages({message, currentMember}) {
               {member.clientData.username}
               </div>
               <div className="text">
-                {text}
+                {data}
               </div>
             </div>
           </li>
