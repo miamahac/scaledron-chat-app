@@ -12,8 +12,9 @@ export default function InputButton(props) {
   function onSubmit(event) {
     event.preventDefault();
     setTexts("");
-    props.onSendMessage(text);
+    props.onSendMessage(text); //ovo salje poruku u chat
   }
+
 
 
 
@@ -36,8 +37,7 @@ export default function InputButton(props) {
             
             
             <button>Pošalji</button>
-
-            {/* //onSendMessage bilo na button */}
+              {/* //onSendMessage bilo na button */}
         </form>    
         </div>
     )

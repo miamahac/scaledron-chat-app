@@ -62,7 +62,7 @@ room.on("message", (message) => {
 console.log('Successfully joined room');
 
 setDrone(drone);
-}, []);
+}, [member]);
 
 
 const onSendMessage = (message) => {
@@ -96,10 +96,12 @@ const onSendMessage = (message) => {
 
 // dupliciraju se poruke
 //ako se posalje prazna poruka baca error
+
+
 // Warning: Each child in a list should have a unique "key" prop.
 // Check the render method of `Messages`. See https://reactjs.org/link/warning-keys for more information.
 //     at li
 //     at Messages (http://localhost:3000/static/js/bundle.js:292:5)
 //     at div
 //     at App (http://localhost:3000/static/js/bundle.js:46:81)
-// o
+// o -----> npm install uuid --> import { v4 as uuidv4 } from 'uuid'; --> <li key={{uuidv4()}
