@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Messages({message, currentMember}) {
 
@@ -12,7 +13,7 @@ export default function Messages({message, currentMember}) {
 
 
         return (
-          <li className={className}>
+          <li className={className} key={uuidv4()}>
             <span 
             className="avatar" 
             style={{ backgroundColor: member.clientData.color }} 
