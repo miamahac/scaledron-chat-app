@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-header {
@@ -11,7 +12,14 @@
   width: 100%;
   text-align: center;
   color: #fff;
+  border-radius: 0 0 20px 20px;
+  font-family: 'Montserrat', sans-serif;
+
 }
+
+/* .font-link {
+  font-family: 'Montserrat', sans-serif;
+} */
 
 .Messages-list {
   padding: 20px 0;
@@ -22,17 +30,20 @@
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Messages-message {
   display: flex;
   margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Messages-message.currentMember {
   /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Message-content {
@@ -49,6 +60,7 @@
   border-radius: 50%;
   display: inline-block;
   margin: 0 10px -10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Message-content>.username {
@@ -56,13 +68,14 @@
   color: gray;
   font-size: 14px;
   padding-bottom: 4px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Message-content>.text {
   padding: 10px;
   max-width: 400px;
   margin: 0;
-  border-radius: 12px;
+  border-radius: 0 12px 12px 12px;
   background-color: #e9ecfa;
   color: rgb(61, 61, 61);
   display: inline-block;
@@ -71,6 +84,9 @@
 .currentMember>.Message-content .text {
   background-color: #6382f3;
   color: #fff;
+  border-radius: 12px 0 12px 12px;
+  text-align: left;
+
 }
 
 form {
@@ -82,20 +98,30 @@ form {
 }
 
 input {
-  padding: 5px;
+  padding: 16px;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #e9ecfa;
   background-color: e9ecfa;
   flex-grow: 1;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button {
-  padding: 5px 10px;
+  padding: 5px 50px;
   font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
   background-color: #6382f3;
   color: white;
   border: none;
   border-radius: 8px;
   margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+  width: 15%;
+  height: auto;
+  padding: 2% 0;
 }
