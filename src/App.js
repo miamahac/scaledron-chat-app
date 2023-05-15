@@ -80,7 +80,7 @@ const onSendMessage = (message) => {
   return (
     <div className="App">
  <header className="App-header">
-<h1>Chat app</h1>
+<img src='chat-app-logo.svg' className='logo'/>
       </header>
     <Messages
           message={message}
@@ -95,7 +95,12 @@ const onSendMessage = (message) => {
 
 
 // dupliciraju se poruke
+// --> rijeseno- zakomentirano u indexe.js <React.StrictMode>
+
+
+
 //ako se posalje prazna poruka baca error
+
 
 
 // Warning: Each child in a list should have a unique "key" prop.
@@ -104,4 +109,5 @@ const onSendMessage = (message) => {
 //     at Messages (http://localhost:3000/static/js/bundle.js:292:5)
 //     at div
 //     at App (http://localhost:3000/static/js/bundle.js:46:81)
-// o -----> npm install uuid --> import { v4 as uuidv4 } from 'uuid'; --> <li key={{uuidv4()}
+// o 
+// --> rijeseno-npm install uuid --> import { v4 as uuidv4 } from 'uuid'; --> <li key={{uuidv4()}
